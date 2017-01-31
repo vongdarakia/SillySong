@@ -13,20 +13,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var lyricsView: UITextView!
-    
+
     let bananaFanaTemplate = ["<FULL_NAME>, <FULL_NAME>, Bo B<SHORT_NAME>", "Banana Fana Fo F<SHORT_NAME>", "Me My Mo M<SHORT_NAME>", "<FULL_NAME>"].joined(separator: "\n")
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
-    }
-    
-
     func shortNameForName(name: String) -> String {
         var lowercaseName = name.lowercased()
         let vowelSet = "aeiouáéíóúäëïöüâêîôû"
         
         let characters = lowercaseName.characters
+
         for c1 in characters {
             if (!vowelSet.contains("\(c1)")) {
                 lowercaseName.remove(at: lowercaseName.startIndex)
@@ -61,7 +56,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func displayLyrics(_ sender: Any) {
         lyricsView.text = lyrics(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
-        
     }
 }
 

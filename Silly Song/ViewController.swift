@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         }
-        return lowercaseName
+        return lowercaseName.isEmpty ? name.lowercased() : lowercaseName;
     }
     
     func lyrics(lyricsTemplate: String, fullName: String) -> String {

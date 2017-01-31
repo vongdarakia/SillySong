@@ -8,13 +8,6 @@
 
 import UIKit
 
-//extension ViewController: UITextViewDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return false
-//    }
-//}
-
 class ViewController: UIViewController, UITextFieldDelegate {
     
     
@@ -28,32 +21,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+
     func shortNameForName(name: String) -> String {
-        let lowercaseName = name.lowercased()
+        var lowercaseName = name.lowercased()
         let vowelSet = "aeiouáéíóúäëïöüâêîôû"
         
-//        var i = 0;
-        
-        for c1 in vowelSet.characters {
-            if (lowercaseName.contains("\(c1)")) {
-                let range: Range<String.Index> = lowercaseName.range(of: "\(c1)")!;
-                let index: Int = lowercaseName.distance(from: lowercaseName.startIndex, to: range.lowerBound)
-                let index2 = lowercaseName.index(lowercaseName.startIndex, offsetBy: index)
-                return lowercaseName.substring(from: index2);
+        let characters = lowercaseName.characters
+        for c1 in characters {
+            if (!vowelSet.contains("\(c1)")) {
+                lowercaseName.remove(at: lowercaseName.startIndex)
+            }
+            else {
+                break
             }
         }
-//        for c1 in lowercaseName.unicodeScalars {
-//            if vowelSet.contains(c1) {
-//                return lowercaseName.substring(from: lowercaseName.index(after: c1));
-//            }
-////            for c2 in vowelSet {
-////                if (c1 == c2)
-////                    return lowercaseName.substring(from: i);
-////                
-////            }
-//            i += 1
-//        }
-        return "";
+        return lowercaseName
     }
     
     func lyrics(lyricsTemplate: String, fullName: String) -> String {
@@ -62,20 +44,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let lyrics = lyricsTemplate
             .replacingOccurrences(of: "<FULL_NAME>", with: fullName)
             .replacingOccurrences(of: "<SHORT_NAME>", with: shortName)
-        
         return lyrics
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func reset(_ sender: Any) {
         nameField.text = "";
@@ -87,8 +63,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         lyricsView.text = lyrics(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
         
     }
-    
-    
-
 }
 

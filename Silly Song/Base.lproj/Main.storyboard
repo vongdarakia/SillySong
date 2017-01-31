@@ -23,27 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate a Silly Song!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abP-uu-XHX">
-                                <rect key="frame" x="57" y="28" width="260" height="80"/>
+                                <rect key="frame" x="57" y="106" width="260" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="0Wo-fG-Zru"/>
-                                    <constraint firstAttribute="height" constant="80" id="Fh7-Ba-RzY"/>
+                                    <constraint firstAttribute="height" constant="80" id="DUO-uK-tQn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-Ri-MdA">
-                                <rect key="frame" x="67" y="264" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="2p8-PG-RyF"/>
-                                    <constraint firstAttribute="height" constant="128" id="Jvd-lE-XI4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1o-Xc-6kw">
-                                <rect key="frame" x="67" y="130" width="240" height="30"/>
+                                <rect key="frame" x="67" y="206" width="240" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -52,17 +41,25 @@
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="ns6-G4-xAl"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Akia Akia" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-Ri-MdA">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.78221782511269666" green="1" blue="0.94728709282379175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="abP-uu-XHX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="2cg-f7-eft"/>
+                            <constraint firstItem="abP-uu-XHX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="86" id="AMR-HA-ynv"/>
                             <constraint firstItem="M1o-Xc-6kw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="AMx-6X-srk"/>
-                            <constraint firstItem="a1g-Ri-MdA" firstAttribute="centerX" secondItem="M1o-Xc-6kw" secondAttribute="centerX" id="Bv1-Y1-AWM"/>
-                            <constraint firstItem="a1g-Ri-MdA" firstAttribute="top" secondItem="M1o-Xc-6kw" secondAttribute="bottom" constant="104" id="aTQ-Ec-qqF"/>
+                            <constraint firstItem="M1o-Xc-6kw" firstAttribute="top" secondItem="abP-uu-XHX" secondAttribute="bottom" constant="20" id="C9g-2C-Seg"/>
+                            <constraint firstItem="abP-uu-XHX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="41" id="Wgj-bW-dlG"/>
                             <constraint firstItem="M1o-Xc-6kw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bCo-H7-BDa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M1o-Xc-6kw" secondAttribute="trailing" constant="52" id="bhk-XT-MIM"/>
-                            <constraint firstItem="M1o-Xc-6kw" firstAttribute="top" secondItem="abP-uu-XHX" secondAttribute="bottom" constant="22" id="ivw-4P-nwm"/>
-                            <constraint firstItem="abP-uu-XHX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xBL-Qu-SZd"/>
+                            <constraint firstItem="a1g-Ri-MdA" firstAttribute="trailing" secondItem="M1o-Xc-6kw" secondAttribute="trailing" id="chz-Ol-tZw"/>
+                            <constraint firstItem="a1g-Ri-MdA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e7a-7s-x4A"/>
+                            <constraint firstItem="a1g-Ri-MdA" firstAttribute="top" secondItem="M1o-Xc-6kw" secondAttribute="bottom" constant="33" id="faO-JS-gDy"/>
+                            <constraint firstItem="abP-uu-XHX" firstAttribute="centerX" secondItem="M1o-Xc-6kw" secondAttribute="centerX" id="iOv-ua-OjC"/>
+                            <constraint firstItem="a1g-Ri-MdA" firstAttribute="leading" secondItem="M1o-Xc-6kw" secondAttribute="leading" id="qqB-km-dGQ"/>
                         </constraints>
                     </view>
                     <connections>

@@ -22,7 +22,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let characters = lowercaseName.characters
 
+        var prevC = characters.first
+        
         for c1 in characters {
+            if (!vowelSet.contains("\(prevC)") && prevC != "y" && c1 == "y") {
+                break;
+            }
+            prevC = c1
             if (!vowelSet.contains("\(c1)")) {
                 lowercaseName.remove(at: lowercaseName.startIndex)
             }
